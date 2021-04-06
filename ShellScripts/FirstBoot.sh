@@ -25,7 +25,7 @@ function nord_theme() {
 	./nord.sh
 }
 
-function install_pkgs() {
+function setup() {
 	sudo apt update
 	sudo apt upgrade
 
@@ -36,6 +36,9 @@ function install_pkgs() {
 
 	nord_theme
 }
+
+setup
+
 
 
 
