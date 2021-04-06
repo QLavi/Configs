@@ -25,6 +25,7 @@ nnoremap wc <C-w>c
 
 nnoremap ss :w<CR>
 nnoremap ty :terminal<CR>
+nnoremap yt <C-\><C-n>
 
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
