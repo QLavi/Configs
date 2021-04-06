@@ -5,7 +5,7 @@ noremap u k
 noremap k l
 noremap l u
 
-nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-a> :NERDTreeToggle<CR>
 
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
@@ -23,9 +23,6 @@ call plug#end()
 " ----- CMD CALLS -----
 colorscheme nord
 let g:rainbow_active = 1
-let g:gitgutter_terminal_reports_focus=0
-let g:NERDCreateDefaultMappings = 1
-let g:NERDSpaceDelims = 1
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ }
