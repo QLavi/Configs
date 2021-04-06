@@ -13,6 +13,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-u> <C-w>k
 nnoremap <C-k> <C-w>l
 
+nnoremap <C-UP> :resize +3<CR>
+nnoremap <C-DOWN> :resize -3<CR>
+nnoremap <C-LEFT> :vertical resize +3<CR>
+nnoremap <C-RIGHT> :vertical resize -3<CR>
+
 nnoremap <leader>[ :vs<CR>
 nnoremap <leader>] :sp<CR>
 
