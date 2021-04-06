@@ -1,33 +1,41 @@
-#!bin/bash
+#!/usr/bin/bash
 
 # LavenRose First Boot Script 
 
-sudo apt update
-sudo apt upgrade
+function down_discord() {
+	cd ~/Downloads
+	STLINK='https://discord.com/api/download?platform=linux&format=deb'
+	LINK=$( curl -ILs -o /dev/null -w %{url_effective} $STLINK )
+	wget -O discord.deb $LINK -q --show-progress
+}
 
-# Install Spotify
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.    d/spotify.list
+function neovim_setup(){
+	cd
+	mkdir .config/nvim
+	cp Repos/Configs/NeoVim/init.vim .config/nvim/init.vim
+	ln -s .config/nvim/init.vim .vimrc
 
-# Download Discord
-STLINK='https://discord.com/api/download?platform=linux&format=deb'
-LINK=$(curl -ILs -o /dev/null -w %{url_effective} $STLINK)
-wget -O discord.deb $LINK -q --show-progress
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+}
 
-# Install Packages
-sudo apt install spotify-client neovim ./discord.deb;
-rm discord.deb
+function nord_theme() {
+	cd Repos
+	git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+	cd nord-gnome-terminal/src
+	./nord.sh
+}
 
-# NeoVim Setting up
-mkdir .config/nvim; cd .config/nvim; cp ~/GHRepos/Conifgs/NeoVim/init.vim init.vim
-ln -s ~/.config/nvim/init.vim ~/.vimrc
+function install_pkgs() {
+	sudo apt update
+	sudo apt upgrade
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	down_discord
+	neovim_setup
 
-# Gnome-Terminal 
-cd;
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-cd nord-gnome-terminal/src
-./nord.sh;
+	sudo apt install spotify-client neovim ./Downloads/discord.deb
+
+	nord_theme
+}
+
+
 
