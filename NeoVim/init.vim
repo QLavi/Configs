@@ -5,7 +5,7 @@ noremap u k
 noremap k l
 noremap l u
 
-nnoremap <C-a> :NERDTreeToggle<CR>
+nnoremap nn :NERDTreeToggle<CR>
 nnoremap <C-Space> i<c-x><c-n>
 
 nnoremap <C-h> <C-w>h
