@@ -14,11 +14,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug 'junegunn/fzf'
-Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
