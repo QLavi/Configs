@@ -30,7 +30,7 @@ function setup() {
 
 	sudo apt update
 
-	sudo apt install spotify-client ./Downloads/discord.deb sublime-text
+	sudo apt install $(cat pkgs.txt)
 }
 
 setup
