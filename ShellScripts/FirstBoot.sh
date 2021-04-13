@@ -9,20 +9,14 @@ function down_discord() {
 	wget -O discord.deb $LINK -q --show-progress
 }
 
-function neovim_setup(){
-	cd
-	mkdir .config/nvim
-	cp Repos/Configs/NeoVim/init.vim .config/nvim/init.vim
-	ln -s .config/nvim/init.vim .vimrc
-
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+function down_spotify() {
+	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 }
 
-function nord_theme() {
-	cd Repos
-	git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-	cd nord-gnome-terminal/src
-	./nord.sh
+function down_sublime_text() {
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 }
 
 function setup() {
@@ -32,9 +26,9 @@ function setup() {
 	down_discord
 	neovim_setup
 
-	sudo apt install spotify-client neovim ./Downloads/discord.deb
+	sudo apt update
 
-	nord_theme
+	sudo apt install spotify-client ./Downloads/discord.deb sublime-text
 }
 
 setup
