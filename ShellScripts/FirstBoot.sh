@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# LavenRose First Boot Script 
+# LavenRose's First Boot Script 
 
 function down_discord() {
 	cd ~/Downloads
