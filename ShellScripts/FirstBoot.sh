@@ -7,6 +7,7 @@ function down_discord() {
 	STLINK='https://discord.com/api/download?platform=linux&format=deb'
 	LINK=$( curl -ILs -o /dev/null -w %{url_effective} $STLINK )
 	wget -O discord.deb $LINK -q --show-progress
+	cd
 }
 
 function down_spotify() {
