@@ -14,7 +14,7 @@ function down_spotify() {
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 }
 
-function down_sublime_text() {
+function down_sublime() {
 	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 }
@@ -24,7 +24,8 @@ function setup() {
 	sudo apt upgrade
 
 	down_discord
-	neovim_setup
+	down_spotify
+	down_sublime
 
 	sudo apt update
 
