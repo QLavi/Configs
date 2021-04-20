@@ -1,8 +1,0 @@
-curl
-g++ gcc make
-git
-gnome-tweaks
-neofetch
-spotify-client
-~/Downloads/discord.deb
-sublime-text
