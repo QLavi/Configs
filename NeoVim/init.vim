@@ -13,15 +13,19 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-u> <C-w>k
 nnoremap <C-k> <C-w>l
 
-nnoremap <C-UP> :resize +3<CR>
-nnoremap <C-DOWN> :resize -3<CR>
-nnoremap <C-LEFT> :vertical resize +3<CR>
-nnoremap <C-RIGHT> :vertical resize -3<CR>
+nnoremap <C-w> :resize +3<CR>
+nnoremap <C-s> :resize -3<CR>
+nnoremap <C-a> :vertical resize +3<CR>
+nnoremap <C-d> :vertical resize -3<CR>
 
 nnoremap <leader>[ :vs<CR>
 nnoremap <leader>] :sp<CR>
 
 nnoremap wc <C-w>c
+nnoremap cl :noh<CR>
+
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabc<CR>
 
 nnoremap ss :w<CR>
 nnoremap ty :terminal<CR>
