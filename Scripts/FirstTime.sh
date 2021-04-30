@@ -4,11 +4,6 @@ function update() {
 	sudo apt update && sudo apt upgrade
 }
 
-function set_aliases() {
-	cargo install exa;
-	alias ls = "exa -lah";
-}
-
 function in_utils() {
 	sudo apt install htop neofetch curl git;
 }
@@ -50,8 +45,9 @@ function main() {
 	in_utils;
 	lang_utils;
 	in_editors;
+	set_aliases;
 
 	in_JBToolbox;
 }
 
-main
+ain
