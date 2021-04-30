@@ -58,7 +58,7 @@ function in_JBToolbox() {
 function main() {
 	update;
 	os_setup;
-	in_spotify;
+	in_spotify_discord;
 	in_alacritty;
 	in_utils;
 	lang_utils;
