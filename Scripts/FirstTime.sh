@@ -13,7 +13,7 @@ function in_alacritty() {
 	sudo add-apt-repository ppa:aslatter/ppa;
 	sudo apt install alacritty;
 	cd;
-	mkdir ~/.configs/alacritty
+	mkdir ~/.config/alacritty
 	cp ~/Repos/Configs/Alacritty/alacritty.yml ~/.config/alacritty/
 }
 
