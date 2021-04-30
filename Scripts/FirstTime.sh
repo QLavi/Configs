@@ -4,6 +4,11 @@ function update() {
 	sudo apt update && sudo apt upgrade
 }
 
+function os_setup() {
+	gnome-extensions disable desktop-icons@csoriano
+	gnome-extensions disable ubuntu-dock@ubuntu.com
+}
+
 function in_utils() {
 	sudo apt install htop neofetch curl git;
 }
@@ -20,10 +25,10 @@ function in_editors() {
 	sudo apt install sublime-text;
 }
 
-function in_spotify() {
+function in_spotify_discord() {
 	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -;
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list;
-	sudo apt install spotify-client;
+	sudo apt install spotify-client discord;
 }
 
 function in_JBToolbox() {
@@ -48,6 +53,7 @@ function main() {
 	set_aliases;
 
 	in_JBToolbox;
+	sudo apt autoremove && sudo apt autoclean;
 }
 
-ain
+main
