@@ -34,7 +34,6 @@ nnoremap yt <C-\><C-n>
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
 
-Plug 'arcticicestudio/nord-vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -48,7 +47,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " ----- CMD CALLS -----
-colorscheme nord
 set splitbelow
 set splitright
 let g:rainbow_active = 1
