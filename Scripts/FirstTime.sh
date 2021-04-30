@@ -27,7 +27,7 @@ function in_popshell() {
 }
 
 function in_utils() {
-	sudo apt install htop neofetch curl git;
+	sudo apt install htop neofetch curl git tree;
 }
 
 function lang_utils() {
@@ -43,6 +43,7 @@ function in_editors() {
 	
 	mkdir ~/.config/nvim
 	cp ~/Repos/Configs/Neovim/init.vim ~/.config/nvim/
+
 	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -;
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
 	sudo apt install sublime-text;
