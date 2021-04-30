@@ -9,6 +9,20 @@ function os_setup() {
 	gnome-extensions disable ubuntu-dock@ubuntu.com
 }
 
+function in_alacritty() {
+	sudo add-apt-repository ppa:aslatter/ppa;
+	sudo apt install alacritty;
+}
+
+function in_popshell() {
+	sudo apt install node-typescript
+	cd;
+	mkdir Repos; cd Repos;
+	git clone https://github.com/pop-os/shell;
+	cd shell;
+	make local-install;
+}
+
 function in_utils() {
 	sudo apt install htop neofetch curl git;
 }
@@ -33,9 +47,8 @@ function in_spotify_discord() {
 
 function in_JBToolbox() {
 	cd;
-	mkdir Repos;
 	cd Repos;
-	git clone https://github.com/nagygergo/jetbrains-toolbox-install.git;
+	git clone https://github.com/nagygergo/jetbrains-toolbox-install;
 	cd jetbrains-toolbox-install;
 	./jetbrains-toolbox.sh;
 	cd ..;
@@ -46,11 +59,11 @@ function main() {
 	update;
 	os_setup;
 	in_spotify;
-
+	in_alacritty;
 	in_utils;
 	lang_utils;
 	in_editors;
-	set_aliases;
+	in_popshell;
 
 	in_JBToolbox;
 	sudo apt autoremove && sudo apt autoclean;
