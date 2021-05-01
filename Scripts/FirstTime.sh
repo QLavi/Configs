@@ -42,17 +42,19 @@ function in_editors() {
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 	
 	mkdir ~/.config/nvim
-	cp ~/Repos/Configs/Neovim/init.vim ~/.config/nvim/
+	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 
-	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -;
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	sudo apt update;
 	sudo apt install sublime-text;
 }
 
-function in_spotify_discord() {
+function in_spotify() {
 	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -;
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list;
-	sudo apt install spotify-client discord;
+	sudo apt update;
+	sudo apt install spotify-client;
 }
 
 function in_JBToolbox() {
@@ -68,7 +70,7 @@ function in_JBToolbox() {
 function main() {
 	update;
 	os_setup;
-	in_spotify_discord;
+	in_spotify;
 	in_alacritty;
 	in_utils;
 	lang_utils;
@@ -78,5 +80,4 @@ function main() {
 	in_JBToolbox;
 	sudo apt autoremove && sudo apt autoclean;
 }
-
 main
