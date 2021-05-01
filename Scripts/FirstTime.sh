@@ -51,8 +51,8 @@ function in_editors() {
 }
 
 function in_spotify_gimp() {
-	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -;
-	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list;
+	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 	sudo apt update;
 	sudo apt install spotify-client gimp;
 }
@@ -70,9 +70,9 @@ function in_JBToolbox() {
 function main() {
 	update;
 	os_setup;
-	in_spotify;
-	in_alacritty;
 	in_utils;
+	in_spotify_gimp;
+	in_alacritty;
 	lang_utils;
 	in_editors;
 	in_popshell;
