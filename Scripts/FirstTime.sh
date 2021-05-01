@@ -27,7 +27,7 @@ function in_popshell() {
 }
 
 function in_utils() {
-	sudo apt install htop neofetch curl git tree;
+	sudo apt install htop neofetch curl tree;
 }
 
 function lang_utils() {
@@ -50,11 +50,11 @@ function in_editors() {
 	sudo apt install sublime-text;
 }
 
-function in_spotify() {
+function in_spotify_gimp() {
 	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -;
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list;
 	sudo apt update;
-	sudo apt install spotify-client;
+	sudo apt install spotify-client gimp;
 }
 
 function in_JBToolbox() {
