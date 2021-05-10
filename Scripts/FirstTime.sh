@@ -1,4 +1,4 @@
-#!/usr/bin/bash 
+#!/usr/bin/bash
 
 function update() {
 	sudo apt update && sudo apt upgrade
@@ -32,16 +32,14 @@ function in_utils() {
 }
 
 function lang_utils() {
-	sudo apt install g++ gcc make
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	sudo apt install g++ gcc make cmake
 }
 
 function in_editors() {
 	sudo apt install neovim
-	
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	
+
 	mkdir ~/.config/nvim
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 
@@ -51,13 +49,17 @@ function in_editors() {
 	sudo apt install sublime-text
 }
 
-function in_spotify_gimp() {
+function in_spotify_tools() {
 	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 	sudo apt update
-	sudo apt install spotify-client gimp
+	sudo apt install spotify-client gimp blender krita
 }
-
+function in_emacs() {
+	sudo apt install emacs
+	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+	~/.emacs.d/bin/doom install
+}
 function in_JBToolbox() {
 	cd
 	cd Repos
@@ -72,10 +74,11 @@ function main() {
 	update
 	os_setup
 	in_utils
-	in_spotify_gimp
+	in_spotify_tools
 	in_alacritty
 	lang_utils
 	in_editors
+	in_emacs
 	in_popshell
 
 	in_JBToolbox
