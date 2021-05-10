@@ -81,7 +81,7 @@ function main() {
 	in_emacs
 	in_popshell
 
-	in_JBToolbox
+	# in_JBToolbox
 	sudo apt autoremove && sudo apt autoclean
 }
 main
