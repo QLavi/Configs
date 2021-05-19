@@ -43,15 +43,13 @@ function in_editors() {
 	mkdir ~/.config/nvim
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 
+	sudo apt install emacs
+	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+	~/.emacs.d/bin/doom install
 }
 
 function in_tools() {
 	sudo apt install gimp blender krita
-}
-function in_emacs() {
-	sudo apt install emacs
-	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-	~/.emacs.d/bin/doom install
 }
 
 function main() {
@@ -62,7 +60,6 @@ function main() {
 	in_alacritty
 	lang_utils
 	in_editors
-	in_emacs
 	in_popshell
 
 	sudo apt autoremove && sudo apt autoclean
