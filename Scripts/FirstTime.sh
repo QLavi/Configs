@@ -32,7 +32,7 @@ function in_utils() {
 }
 
 function lang_utils() {
-	sudo apt install g++ gcc make cmake
+	sudo apt install g++ gcc make cmake clang libclang-dev
 }
 
 function in_editors() {
