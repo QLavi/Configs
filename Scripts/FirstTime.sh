@@ -42,6 +42,7 @@ function in_editors() {
 
 	mkdir ~/.config/nvim
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
+	ln -s ~/.config/nvim/init.vim ~/.vimrc
 
 	sudo apt install emacs
 	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
