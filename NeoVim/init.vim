@@ -28,9 +28,6 @@ nnoremap ss :w<CR>
 nnoremap ty :terminal<CR>
 nnoremap yt <C-\><C-n>
 
-nnoremap rnr :set relativenumber<CR>
-nnoremap nrn :set norelativenumber<CR>
-
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
 
