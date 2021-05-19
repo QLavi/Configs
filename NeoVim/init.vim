@@ -7,8 +7,8 @@ nnoremap <C-Space> i<c-x><c-n>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
-nnoremap <C-u> <C-w>k
-nnoremap <C-k> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 nnoremap <C-w> :resize +3<CR>
 nnoremap <C-s> :resize -3<CR>
