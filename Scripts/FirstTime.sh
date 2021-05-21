@@ -44,7 +44,9 @@ function in_editors() {
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 	ln -s ~/.config/nvim/init.vim ~/.vimrc
 
-	sudo apt install emacs
+	sudo add-apt-repository ppa:kelleyk/emacs
+	sudo apt update
+	sudo apt install emacs27
 	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
 }
