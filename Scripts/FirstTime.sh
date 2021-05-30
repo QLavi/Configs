@@ -28,11 +28,13 @@ function in_popshell() {
 }
 
 function in_utils() {
+	sudo add-apt-repository ppa:git-core/ppa
+	sudo apt update
 	sudo apt install htop neofetch curl tree
 }
 
 function lang_utils() {
-	sudo apt install g++ gcc make cmake clang libclang-dev
+	sudo apt install g++ gcc make cmake clang libclang-dev gdb valgrind
 }
 
 function in_editors() {
@@ -49,6 +51,8 @@ function in_editors() {
 	sudo apt install emacs27
 	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
+
+	cp ~/Repos/Configs/Doom_Emacs/* ~/.doom.d/
 }
 
 function in_tools() {
