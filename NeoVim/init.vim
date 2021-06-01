@@ -2,6 +2,10 @@
 
 " ------ KEYBINDS ------
 
+noremap u k
+noremap k l
+norempa l u
+
 nnoremap nn :NERDTreeToggle<CR>
 nnoremap <C-Space> i<c-x><c-n>
 
