@@ -31,7 +31,6 @@ nnoremap yt <C-\><C-n>
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
 
-Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -44,7 +43,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " ----- CMD CALLS -----
-colorscheme gruvbox
 set splitbelow
 set splitright
 let g:rainbow_active = 1
