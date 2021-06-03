@@ -33,6 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-gruvbox)
+;; (setq doom-theme 'doom-solarized-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -47,7 +48,6 @@
 (define-key evil-normal-state-map "k" 'evil-forward-char)
 
 (define-key evil-visual-state-map "u" 'evil-previous-line)
-(define-key evil-visual-state-map "l" 'undo)
 (define-key evil-visual-state-map "k" 'evil-forward-char)
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
