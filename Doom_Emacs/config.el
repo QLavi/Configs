@@ -43,12 +43,11 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-(define-key evil-normal-state-map "u" 'evil-previous-line)
-(define-key evil-normal-state-map "l" 'undo)
-(define-key evil-normal-state-map "k" 'evil-forward-char)
+(define-key evil-normal-state-map "K" 'evil-backward-paragraph)
+(define-key evil-normal-state-map "J" 'evil-forward-paragraph)
 
-(define-key evil-visual-state-map "u" 'evil-previous-line)
-(define-key evil-visual-state-map "k" 'evil-forward-char)
+(define-key evil-visual-state-map "K" 'evil-backward-paragraph)
+(define-key evil-visual-state-map "J" 'evil-forward-paragraph)
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
