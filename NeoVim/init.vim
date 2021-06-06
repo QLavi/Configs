@@ -1,10 +1,8 @@
 " LAVENROSE VIM CONFIGURATION
 
 " ------ KEYBINDS ------
-
-noremap u k
-noremap k l
-norempa l u
+noremap K {
+noremap J }
 
 nnoremap nn :NERDTreeToggle<CR>
 nnoremap <C-Space> i<c-x><c-n>
