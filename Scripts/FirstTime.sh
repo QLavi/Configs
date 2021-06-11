@@ -7,6 +7,7 @@ function update() {
 function os_setup() {
 	gnome-extensions disable desktop-icons@csoriano
 	gnome-extensions disable ubuntu-dock@ubuntu.com
+	gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 }
 
 function in_alacritty() {
@@ -34,7 +35,7 @@ function in_utils() {
 }
 
 function lang_utils() {
-	sudo apt install g++ gcc make cmake clang libclang-dev gdb valgrind
+	sudo apt install g++ gcc make cmake clang gdb valgrind
 }
 
 function in_editors() {
@@ -46,13 +47,12 @@ function in_editors() {
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 	ln -s ~/.config/nvim/init.vim ~/.vimrc
 
-	sudo add-apt-repository ppa:kelleyk/emacs
-	sudo apt update
-	sudo apt install emacs27
-	git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-	~/.emacs.d/bin/doom install
-
-	cp ~/Repos/Configs/Doom_Emacs/* ~/.doom.d/
+	#sudo add-apt-repository ppa:kelleyk/emacs
+	#sudo apt update
+	#sudo apt install emacs27
+	#git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+	#~/.emacs.d/bin/doom install
+	#cp ~/Repos/Configs/Doom_Emacs/* ~/.doom.d/
 }
 
 function in_tools() {
