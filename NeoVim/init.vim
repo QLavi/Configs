@@ -33,6 +33,7 @@ nnoremap yt <C-\><C-n>
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -47,6 +48,9 @@ call plug#end()
 " ----- CMD CALLS -----
 set splitbelow
 set splitright
+set relativenumber number
+
+colorscheme nord
 let g:rainbow_active = 1
 let g:lightline = {
 	\ 'colorscheme': 'seoul256',
