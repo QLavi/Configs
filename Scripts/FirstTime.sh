@@ -29,8 +29,6 @@ function in_popshell() {
 }
 
 function in_utils() {
-	sudo add-apt-repository ppa:git-core/ppa
-	sudo apt update
 	sudo apt install htop neofetch curl tree
 }
 
@@ -47,12 +45,9 @@ function in_editors() {
 	cp ~/Repos/Configs/NeoVim/init.vim ~/.config/nvim/
 	ln -s ~/.config/nvim/init.vim ~/.vimrc
 
-	#sudo add-apt-repository ppa:kelleyk/emacs
-	#sudo apt update
-	#sudo apt install emacs27
-	#git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-	#~/.emacs.d/bin/doom install
-	#cp ~/Repos/Configs/Doom_Emacs/* ~/.doom.d/
+	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+	sudo apt update; sudo apt install code
 }
 
 function in_tools() {
