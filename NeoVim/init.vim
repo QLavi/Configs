@@ -4,7 +4,7 @@
 noremap K {
 noremap J }
 
-nnoremap nn :NERDTreeToggle<CR>
+nnoremap <SPACE>n :NERDTreeToggle<CR>
 nnoremap <C-Space> i<c-x><c-n>
 
 nnoremap <C-h> <C-w>h
@@ -20,7 +20,6 @@ nnoremap <C-d> :vertical resize -3<CR>
 nnoremap <leader>[ :vs<CR>
 nnoremap <leader>] :sp<CR>
 
-nnoremap wc <C-w>c
 nnoremap cl :noh<CR>
 
 nnoremap tn :tabnew<CR>
@@ -33,7 +32,8 @@ nnoremap yt <C-\><C-n>
 " ------ PLUGS ------
 call plug#begin('~/.config/nvim/plugins')
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -46,15 +46,37 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " ----- CMD CALLS -----
+syntax on
 set splitbelow
 set splitright
 set relativenumber number
 
-colorscheme nord
-let g:rainbow_active = 1
+set t_Co=256
+set t_ut=
+
+" configure treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = {"c"},
+	highlight = {
+	enable = true,
+	disable = {},
+	},
+}
+EOF
+
+syntax on
+colorscheme codedark
+
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+
 let g:lightline = {
 	\ 'colorscheme': 'seoul256',
 	\ }
 set tabstop=4
 set shiftwidth=0
 
+set listchars=space:.,tab:>- list
