@@ -33,15 +33,6 @@ function alacritty()
 	cp ../alacritty/alacritty.yml ~/.config/alacritty/
 }
 
-function install_spotify()
-{
-	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-
-	update
-	sudo apt install spotify-client
-}
-
 function ssh_setup()
 {
 	ssh-keygen -t ed25519 -C "LavenRose@protonmail.com"
@@ -65,7 +56,6 @@ function main()
 	install_utils
 	alacritty
 	neovim
-	install_spotify
 	ssh_setup
 	git_setup
 }
