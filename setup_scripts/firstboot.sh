@@ -23,7 +23,7 @@ function neovim()
 
 	mkdir ~/.config/nvim
 	cp ../neovim/init.vim ~/.config/nvim/
-	ln -s ~/.config/nvim/init.vim .vimrc
+	ln -s ~/.config/nvim/init.vim ~/.vimrc
 }
 
 function alacritty()
