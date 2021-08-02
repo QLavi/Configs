@@ -44,8 +44,6 @@ function git_setup()
 {
 	sudo add-apt-repository ppa:git-core/ppa
 	update
-	git config --global user.name "QLavi"
-	git config --global user.email "LavenRose@protonmail.com"
 	git config --global init.defaultBranch "main"
 }
 
