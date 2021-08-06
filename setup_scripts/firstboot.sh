@@ -35,7 +35,7 @@ function alacritty()
 
 function ssh_setup()
 {
-	ssh-keygen -t ed25519 -C "LavenRose@protonmail.com"
+	ssh-keygen -t ed25519 -C ""
 	eval "${ssh-agent -s}"
 	ssh-add ~/.ssh/id_ed25519
 }
