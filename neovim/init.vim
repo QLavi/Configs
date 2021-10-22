@@ -1,84 +1,56 @@
-" LAVENROSE VIM CONFIGURATION
+nnoremap ss :w<cr>
+nnoremap cl :noh<cr>
 
-" ------ KEYBINDS ------
-noremap K {
-noremap J }
+let mapleader = ' '
+nnoremap <leader>v :vs<cr>
+nnoremap <leader>s :sp<cr>
 
-nnoremap <SPACE>n :NERDTreeToggle<CR>
-nnoremap <C-Space> i<c-x><c-n>
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>d <C-w>l
+nnoremap <leader>a <C-w>h
+nnoremap <leader>wc <C-w>c
 
-nnoremap <leader>[ :vs<CR>
-nnoremap <leader>] :sp<CR>
-nnoremap <leader>c <C-w>c
+nnoremap <leader>ec :e [Fill This]<cr>
 
-nnoremap cl :noh<CR>
-
-nnoremap tn :tabnew<CR>
-nnoremap tc :tabc<CR>
-
-nnoremap ss :w<CR>
-nnoremap ty :terminal<CR>
-nnoremap yt <C-\><C-n>
-
-" ------ PLUGS ------
-call plug#begin('~/.config/nvim/plugins')
+call plug#begin("[Fill This]")
 
 Plug 'morhetz/gruvbox'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tomasiser/vim-code-dark'
 Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 
-" ----- CMD CALLS -----
-set nocompatible
 syntax on
-
-set clipboard +=unnamed,unnamedplus
+set nocompatible
 set noshowmode
 
-set splitbelow
-set splitright
-set relativenumber number
+set splitright splitbelow
 
-set t_Co=256
-set t_ut=
-
-" configure treesitter
 lua << EOF
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"c"},
-	highlight = {
-	enable = true,
-	disable = {},
-	},
+require"nvim-treesitter.configs".setup
+{
+ensure_installed = {"c", "python", "cpp"},
+highlight = {enable=true, disable={}}
 }
 EOF
 
-syntax on
+let g:gruvbox_bold = 0
 colorscheme gruvbox
 
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
+let g:lightline = {'colorscheme': 'seoul256'}
 
-let g:lightline = {
-	\ 'colorscheme': 'seoul256',
-	\ }
+set clipboard +=unnamed,unnamedplus
 set tabstop=4
-set shiftwidth=0
+set shiftwidth=4
+set expandtab
+set mouse=a
 
-" set listchars=space:.,tab:>- list
-
+au BufReadPost *.vert,*.frag,*.comp set filetype=c
