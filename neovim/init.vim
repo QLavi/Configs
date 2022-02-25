@@ -14,33 +14,25 @@ nnoremap <leader>d <C-w>l
 nnoremap <leader>a <C-w>h
 nnoremap <leader>wc <C-w>c
 
-nnoremap <leader>ec :e [Fill This]<cr>
+nnoremap <leader>ec :e ~/.vimrc<cr>
 
-call plug#begin("[Fill This]")
+call plug#begin("~/.config/nvim/plugins")
 
 Plug 'morhetz/gruvbox'
-Plug 'tomasiser/vim-code-dark'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 
 syntax on
 set nocompatible
 set noshowmode
+set number relativenumber
 
 set splitright splitbelow
-
-lua << EOF
-require"nvim-treesitter.configs".setup
-{
-ensure_installed = {"c", "python", "cpp"},
-highlight = {enable=true, disable={}}
-}
-EOF
+set termguicolors
 
 let g:gruvbox_bold = 0
 colorscheme gruvbox
@@ -48,8 +40,8 @@ colorscheme gruvbox
 let g:lightline = {'colorscheme': 'seoul256'}
 
 set clipboard +=unnamed,unnamedplus
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set mouse=a
 
